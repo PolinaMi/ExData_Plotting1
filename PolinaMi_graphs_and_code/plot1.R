@@ -21,16 +21,14 @@ df <- read.table(fp,
                  sep = ";", header = TRUE, na.strings = "?", colClasses = classes) 
 t2 <- Sys.time() # end of loading
 print (t2 - t1) # table loading time (just for curiousity)
-# convert Date and Time
-t <- paste (df$Date, df$Time) # merge time and date
-df$Time <- strptime (t, format = "%d/%m/%Y %H:%M:%S") # convert column to time type
+# convert Date
 df$Date <- as.Date(df$Date, format = "%d/%m/%Y") # convert column to Date type
 
 # subset data frame for required dates
 df <- df [d1 <= df$Date & df$Date <= d2, ] 
 
 # plot graph1 using base plot system and save as *.png file
-png("graph1.png", width = 480, heigth = 480) # open graphic device
+png("plot1.png", width = 480, height = 480) # open graphic device
 hist(df$Global_active_power,
      main = "Global Active Power", xlab = "Global Active Power (kilowatts)",  
      col = "red")

@@ -30,7 +30,7 @@ df$Date <- as.Date(df$Date, format = "%d/%m/%Y") # convert column to Date type
 df <- df [d1 <= df$Date & df$Date <= d2, ] 
 
 # plot graph4 using base plot system and save as *.png file
-png("plot4.png")#, width = 480, heigth = 480) # open graphic device
+png("plot4.png", width = 480, height = 480) # open graphic device
 Sys.setlocale("LC_TIME", "English") # force week days to be printed in English (vs. Cyrillic in my locale)
 # Plot 4 subgraphs
 par(mfrow = c(2,2)) # 2 rows and 2 columns

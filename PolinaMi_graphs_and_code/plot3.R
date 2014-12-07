@@ -30,7 +30,7 @@ df$Date <- as.Date(df$Date, format = "%d/%m/%Y") # convert column to Date type
 df <- df [d1 <= df$Date & df$Date <= d2, ] 
 
 # plot graph3 using base plot system and save as *.png file
-png("plot3.png", width = 480, heigth = 480) # open graphic device
+png("plot3.png", width = 480, height = 480) # open graphic device
 Sys.setlocale("LC_TIME", "English") # force week days to be printed in English (vs. Cyrillic in my locale)
 # plot 3 submeterings vs. Time
 plot(df$Time, df$Sub_metering_1,   
